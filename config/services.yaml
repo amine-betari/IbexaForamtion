@@ -26,3 +26,21 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\FieldType\Point2D\Type:
+        tags:
+            - { name: ezplatform.field_type, alias: point2d }
+            - { name: ezplatform.field_type.form_mapper.value, fieldType: point2d }
+            - { name: ezplatform.field_type.form_mapper.definition, fieldType: point2d }
+    App\Serializer\Point2D\ValueNormalizer:
+        tags:
+            - { name: serializer.normalizer }
+    App\Serializer\Point2D\ValueDenormalizer:
+        tags:
+            - { name: serializer.denormalizer }
+    App\Tab\Dashboard\Everyone\EveryoneArticleTab:
+        autowire: true
+        autoconfigure: true
+        public: false
+        tags:
+            - { name: ezplatform.tab, group: dashboard-everyone }

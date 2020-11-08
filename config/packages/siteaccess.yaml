@@ -1,0 +1,8 @@
+ezplatform:
+    siteaccess:
+        list: [site, de]
+        groups:
+            site_group: [site, de]
+        default_siteaccess: site
+        match:
+            URIElement: 1
